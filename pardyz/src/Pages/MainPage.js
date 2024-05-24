@@ -2,18 +2,36 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 import BoardItem from "../Components/BoardItem";
+import { getAllInfoAPI } from "../API/Axios";
+import { useState } from "react";
 
 const MainPage = () => {
-  // const tempList = [
-  //   {
-  //     id : 1,
-  //     name : "kim"
-  //   },
-  //   {
-  //     id : 1,
-  //     name : "park"
-  //   }
-  // ];
+  const tempList = [
+    {
+      id : 1,
+      name : "kim"
+    },
+    {
+      id : 2,
+      name : "park2"
+    },
+    {
+      id : 3,
+      name : "park3"
+    },
+
+  ];
+
+  // const getMember = async () => {
+  //   const [data, setData] = useState();
+
+  //   const newData = await getAllInfoAPI();
+
+  //   setData(newData);
+  // };
+
+  
+
 return (
   <Container>
       <Title>실패 전시회</Title>
@@ -23,8 +41,13 @@ return (
         <Create>작품 올리러 가기</Create> 
       </SecondHeader>
       <Board>
-        <BoardItem/>
+      
+          {tempList.map((item) => {
+            return <BoardItem key={item.id} member={item}/>;
+          })}
+      
       </Board>
+
   </Container>
 );
 };
@@ -110,6 +133,7 @@ const Board = styled.div`
 width: 976px;
 height: 830.79px;
 display : flex;
+margin-top: 10px;
 `
 
 export default MainPage;

@@ -40,6 +40,10 @@ form {
     all: unset;
 } */
 
+textarea{
+    all: unset;
+}
+
 :any-link {
     all: unset;
 }

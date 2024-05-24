@@ -7,13 +7,18 @@ import { useState, useEffect } from "react";
 const DetailPage = () => {
   const [info, setInfo] = useState([]);
 
-  const id = 1;
+  const id = 43;
 
-  useEffect((id) => {
+  useEffect(() => {
     const getInfo = async (id) => {
-      const response = await getOneInfoAPI();
-      setInfo(response);
-      console.log(info);
+      try{
+        const response = await getOneInfoAPI(id);
+        setInfo(response);
+        console.log(info);
+      } catch(err) {
+        console.error(err);
+      }
+      
     };
     getInfo(id);
   }, []);
@@ -23,6 +28,7 @@ const DetailPage = () => {
       <Outlet />
       <Container>
         <div>
+          {/* <Img><Curtain src="/curtain.png" /></Img> */}
           <Title>실패 전시회</Title>
           <Subtitle>카테고리/요리</Subtitle>
         </div>
@@ -34,8 +40,27 @@ const DetailPage = () => {
             </Name>
           </Div>
           <Desc>
+            <Label>내가 한 실패는?</Label>
             {info && info.lacked}
-            {/* <Comment>
+          </Desc>
+          <Line />
+          <Desc>
+            <Label>하지만 실패를 통해 이런 것들을 배웠어요!</Label>
+            {info && info.explanation}
+          </Desc>
+          <Line />
+          <Desc>
+            <Label>그래서 이런 점을 깨닫게 되었어요</Label>
+            {info && info.learned}
+          </Desc>
+          <Line />
+          <Desc>
+            <Label>실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
+            {info && info.longedfor}
+          </Desc>
+          <Line />
+          {/* <Desc>
+            <Comment>
               <Label>작품에 대한 감상평을 남겨주세요!</Label>
               <Nickname>
                 <>별명:</>
@@ -43,11 +68,8 @@ const DetailPage = () => {
               </Nickname>
               <Input type="textarea" placeholder="Add a comment...."></Input>
               <Button>작성완료</Button>
-            </Comment> */}
-          </Desc>
-          <Desc>{info && info.explanation}</Desc>
-          <Desc>{info && info.learned}</Desc>
-          <Desc>{info && info.longedfor}</Desc>
+            </Comment>
+          </Desc> */}
         </Exhibit>
       </Container>
     </Wrapper>
@@ -59,15 +81,21 @@ width: 608px;
 border-image-source : url("/border.png");
 `
 
+const Line = styled.hr`
+height: 1px;
+width: 449px;
+background-color: #E8E8E8;
+border: none;
+`
+
 const Wrapper = styled.div`
 width: 1512px;
 `
 
 const Curtain = styled.img`
-width: 1512px;
-height: 406px;
 border: 1px;
-position: absolute;
+top: 0;
+position: fixed;
 z-index: -1;
 `
 
@@ -99,6 +127,7 @@ width: 608px;
 `
 
 const Container = styled.div`
+background-color: #FFFFFF;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -150,8 +179,13 @@ padding: 9px;
 `
 
 const Button = styled.button`
-background-color: black;
-color: white;
+background-color: #FFBD3D;
+color: #222222;
+
+text-align: center;
+width: 449px;
+height: 51px;
+font-weight: 500;
 `
 
 export default DetailPage;

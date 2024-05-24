@@ -8,12 +8,12 @@ function MyRoutes() {
   return (
     <>
       <Routes>
-        <Route element={<Sidebar />}>
+        {/* <Route element={<Sidebar />}> */}
           <Route path="/" element={<MainPage />} />
           <Route path="/detail" element={<DetailPage />} />
           <Route path="/writing" element={<WritingPage />} />
-          <Route path="/sidebar" element={<Sidebar />} />
-        </Route>
+          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+        {/* </Route> */}
       </Routes>
     </>
   );

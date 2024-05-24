@@ -25,41 +25,38 @@ const DetailPage = () => {
 
   return (
     <Wrapper>
-      <Outlet />
+      {/* <Outlet /> */}
+      <Header>
+        <img src="/top.png" width="10%" />
+        <img src="/logo.png" width="30%" />
+      </Header>
+      {/* <Subtitle>카테고리/요리</Subtitle> */}
       <Container>
-        <div>
-          {/* <Img><Curtain src="/curtain.png" /></Img> */}
-          <Title>실패 전시회</Title>
-          <Subtitle>카테고리/요리</Subtitle>
-        </div>
         <Exhibit>
           <Div>
-            <img src="/box.png" alt="프로필 이미지" />
+            <File><img src="/file.png" width="50%" /></File>
             <Name>
               <Label>{info && info.title}/{info && info.painter}</Label>
             </Name>
           </Div>
           <Desc>
-            <Label>내가 한 실패는?</Label>
+            <Label>✓ 내가 한 실패는?</Label>
             {info && info.lacked}
           </Desc>
           <Line />
           <Desc>
-            <Label>하지만 실패를 통해 이런 것들을 배웠어요!</Label>
+            <Label>✓ 하지만 실패를 통해 이런 것들을 배웠어요!</Label>
             {info && info.explanation}
           </Desc>
           <Line />
           <Desc>
-            <Label>그래서 이런 점을 깨닫게 되었어요</Label>
+            <Label>✓ 그래서 이런 점을 깨닫게 되었어요</Label>
             {info && info.learned}
           </Desc>
           <Line />
           <Desc>
-            <Label>실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
+            <Label>✓ 실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
             {info && info.longedfor}
-          </Desc>
-          <Line />
-          {/* <Desc>
             <Comment>
               <Label>작품에 대한 감상평을 남겨주세요!</Label>
               <Nickname>
@@ -69,19 +66,30 @@ const DetailPage = () => {
               <Input type="textarea" placeholder="Add a comment...."></Input>
               <Button>작성완료</Button>
             </Comment>
-          </Desc> */}
+          </Desc>
         </Exhibit>
       </Container>
     </Wrapper>
   );
 };
 
-const Img = styled.div`
-width: 608px;
+export const File = styled.div`
+display: flex;
+justify-content: center;
+width: auto;
 border-image-source : url("/border.png");
 `
 
-const Line = styled.hr`
+export const Header = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0px;
+margin-top: 10px;
+`
+
+export const Line = styled.hr`
 height: 1px;
 width: 449px;
 background-color: #E8E8E8;
@@ -90,13 +98,14 @@ border: none;
 
 const Wrapper = styled.div`
 width: 1512px;
-`
-
-const Curtain = styled.img`
-border: 1px;
-top: 0;
-position: fixed;
-z-index: -1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+z-value: -1;
+background-image : url("/bg.png");
+background-repeat : no-repeat;
+background-size : cover;
 `
 
 const Desc = styled.div`
@@ -106,13 +115,13 @@ width: 449px;
 margin-top: 90px;
 `
 
-const Div = styled.div`
+export const Div = styled.div`
 display: flex;
 flex-direction: column;
 width: 469px;
 margin-top: 17px;
 `
-const Name = styled.div`
+export const Name = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
@@ -132,11 +141,14 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-width: 1512px;
+width: 1104px;
 margin-top: 30px;
 `
 
 const Title = styled.p`
+font-family: 'cheoeumcheoreom-210', sans-serif;
+font-style: normal;
+font-weight: 300;
 font-size: 42px;
 font-weight: 600;
 line-height: 18px;
@@ -150,9 +162,10 @@ font-weight: 500;
 line-height: 18px;
 text-align: center;
 color: #929292;
+margin: 0px;
 `
 
-const Label = styled.p`
+export const Label = styled.p`
 font-size: 22px;
 font-weight: 500;
 line-height: 18px;

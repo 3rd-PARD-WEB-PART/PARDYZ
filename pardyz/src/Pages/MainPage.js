@@ -4,6 +4,7 @@ import GlobalStyles from "../GlobalStyles";
 import BoardItem from "../Components/BoardItem";
 import { getAllInfoAPI } from "../API/Axios";
 import { useState } from "react";
+import { Header } from "./DetailPage";
 
 const MainPage = () => {
   const tempList = [
@@ -34,8 +35,10 @@ const MainPage = () => {
 
 return (
   <Container>
-      <Title>실패 전시회</Title>
-      <SubTitle>카테고리/홈</SubTitle>
+      <Header>
+        <img src="/top.png" width="10%" />
+        <img src="/logo.png" width="30%" />
+      </Header>
       <SecondHeader>
         <BoardTitle>금주의 실패작</BoardTitle>
         <Create>작품 올리러 가기</Create> 
@@ -57,7 +60,11 @@ width: 1512px;
 flex-direction: column;
 display: flex;
 align-items: center;
-margin-top:99px;
+margin-top: 0px;
+z-value: -1;
+background-image : url("/bg.png");
+background-repeat : no-repeat;
+background-size : cover;
 `
 
 const Title = styled.div`

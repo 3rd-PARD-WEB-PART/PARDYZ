@@ -40,6 +40,13 @@ form {
     all: unset;
 } */
 
+<<<<<<< HEAD
+=======
+textarea{
+    all: unset;
+}
+
+>>>>>>> 35e1a426f6d16084cc095707632b3e8c825e8d02
 :any-link {
     all: unset;
 }

@@ -34,7 +34,7 @@ const DetailPage = () => {
       <Container>
         <Exhibit>
           <Div>
-            <File><img src="/file.png" /></File>
+            <File><img src="/file.png" width="50%" /></File>
             <Name>
               <Label>{info && info.title}/{info && info.painter}</Label>
             </Name>
@@ -76,12 +76,14 @@ const DetailPage = () => {
   );
 };
 
-const File = styled.div`
+export const File = styled.div`
+display: flex;
+justify-content: center;
 width: auto;
 border-image-source : url("/border.png");
 `
 
-const Header = styled.div`
+export const Header = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -90,7 +92,7 @@ padding: 0px;
 margin-top: 10px;
 `
 
-const Line = styled.hr`
+export const Line = styled.hr`
 height: 1px;
 width: 449px;
 background-color: #E8E8E8;
@@ -116,13 +118,13 @@ width: 449px;
 margin-top: 90px;
 `
 
-const Div = styled.div`
+export const Div = styled.div`
 display: flex;
 flex-direction: column;
 width: 469px;
 margin-top: 17px;
 `
-const Name = styled.div`
+export const Name = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
@@ -166,7 +168,7 @@ color: #929292;
 margin: 0px;
 `
 
-const Label = styled.p`
+export const Label = styled.p`
 font-size: 22px;
 font-weight: 500;
 line-height: 18px;

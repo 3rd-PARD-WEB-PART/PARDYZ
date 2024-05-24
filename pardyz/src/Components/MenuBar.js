@@ -16,7 +16,7 @@ function MenuBar() {
 
 const Bar = styled.div`
 width: 866px;
-height:30px;
+height:20px;
 top: 214px;
 left: 323px;
 padding: 10px;

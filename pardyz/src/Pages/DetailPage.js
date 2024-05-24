@@ -35,7 +35,6 @@ const Div = styled.div`
 display: flex;
 flex-direction: column;
 width: 469px;
-height: 358px;
 margin-top: 65px;
 `
 
@@ -91,6 +90,7 @@ const Comment = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
+width: 608px;
 `
 
 const Button = styled.button``

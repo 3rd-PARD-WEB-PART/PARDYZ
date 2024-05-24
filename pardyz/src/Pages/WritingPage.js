@@ -1,5 +1,12 @@
+import { useEffect } from "react";
 import styled from "styled-components";
+import {getAllInfoAPI} from "../API/Axios";
+
 const WritingPage = () => {
+    useEffect(()=> {
+        const data = getAllInfoAPI();
+        console.log (data);
+    },[]);
 return(
     <>
     {/* 가장 큰 div */}

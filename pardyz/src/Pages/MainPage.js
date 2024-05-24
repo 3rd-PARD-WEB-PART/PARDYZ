@@ -1,7 +1,11 @@
+import Sidebar from "../Sidebar";
+
 const MainPage = () => {
-return (
-<></>
-);
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default MainPage;

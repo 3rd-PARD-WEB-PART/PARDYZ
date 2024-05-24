@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 
-function BoardItem() {
+function BoardItem(props) {
+  console.log(props);
+
   return (
     <Item>
       <ItemImage />
       <Desc>
-        <ItemTitle>바나나 밟다</ItemTitle>
-        <ItemCreator>김영채</ItemCreator>
+        <ItemTitle>{props.member.id}</ItemTitle>
+        <ItemCreator>{props.member.name}</ItemCreator>
       </Desc>
     </Item>
   )
@@ -20,6 +22,7 @@ height: 258.93px;
 gap: 0px;
 opacity: 0px;
 display : block;
+margin-right: 29px;
 `
 
 const ItemImage = styled.div`

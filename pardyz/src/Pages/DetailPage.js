@@ -90,7 +90,10 @@ const Comment = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
+<<<<<<< HEAD
 width: 608px;
+=======
+>>>>>>> fc98b7fbf15679c857674767cd55aea20cd79fc1
 `
 
 const Button = styled.button``

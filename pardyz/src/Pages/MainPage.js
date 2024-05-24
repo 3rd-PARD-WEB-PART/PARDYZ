@@ -4,6 +4,8 @@ import GlobalStyles from "../GlobalStyles";
 import BoardItem from "../Components/BoardItem";
 import { getAllInfoAPI } from "../API/Axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import MenuBar from "../Components/MenuBar";
 
 const MainPage = () => {
   const tempList = [
@@ -36,9 +38,12 @@ return (
   <Container>
       <Title>실패 전시회</Title>
       <SubTitle>카테고리/홈</SubTitle>
+      <MenuBar/>
       <SecondHeader>
         <BoardTitle>금주의 실패작</BoardTitle>
-        <Create>작품 올리러 가기</Create> 
+        <Link to="/detail">
+          <Create>작품 올리러 가기</Create> 
+        </Link>
       </SecondHeader>
       <Board>
       
@@ -104,6 +109,9 @@ color: #929292;
 display: flex;
 justify-content: center;
 align-items: center;
+&:hover{
+  cursor: pointer;
+}
 `
 const BoardTitle = styled.div`
 width: 267px;

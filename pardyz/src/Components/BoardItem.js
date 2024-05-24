@@ -2,15 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 
+<<<<<<< HEAD
 function BoardItem(props) {
   console.log(props);
 
+=======
+function BoardItem() {
+>>>>>>> origin/kye
   return (
     <Item>
       <ItemImage />
       <Desc>
+<<<<<<< HEAD
         <ItemTitle>{props.member.id}</ItemTitle>
         <ItemCreator>{props.member.name}</ItemCreator>
+=======
+        <ItemTitle>바나나 밟다</ItemTitle>
+        <ItemCreator>김영채</ItemCreator>
+>>>>>>> origin/kye
       </Desc>
     </Item>
   )
@@ -22,7 +31,10 @@ height: 258.93px;
 gap: 0px;
 opacity: 0px;
 display : block;
+<<<<<<< HEAD
 margin-right: 29px;
+=======
+>>>>>>> origin/kye
 `
 
 const ItemImage = styled.div`

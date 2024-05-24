@@ -1,5 +1,6 @@
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
+<<<<<<< HEAD
 import { Outlet } from "react-router-dom";
 import { getOneInfoAPI } from "../API/Axios";
 import { useState, useEffect } from "react";
@@ -29,11 +30,19 @@ const DetailPage = () => {
       <Container>
         <div>
           {/* <Img><Curtain src="/curtain.png" /></Img> */}
+=======
+
+const DetailPage = () => {
+  return (
+      <Container>
+        <div>
+>>>>>>> origin/kye
           <Title>실패 전시회</Title>
           <Subtitle>카테고리/요리</Subtitle>
         </div>
         <Exhibit>
           <Div>
+<<<<<<< HEAD
             <img src="/box.png" alt="프로필 이미지" />
             <Name>
               <Label>{info && info.title}/{info && info.painter}</Label>
@@ -106,12 +115,42 @@ width: 449px;
 margin-top: 90px;
 `
 
+=======
+            <img src="/image.png" alt="프로필 이미지" />
+            <Name>
+              <Label>작품명/작가명</Label>
+            </Name>
+          </Div>
+          <Div>
+            <p>
+              본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면 어떨까? 본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면 어떨까?본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면
+            </p>
+          </Div>
+          <Comment>
+            <Label>작품에 대한 감상평을 남겨주세요!</Label>
+            <input type="textarea" placeholder="Add a comment...."></input>
+          </Comment>
+          <input type="textarea" placeholder="Add a comment...."></input>
+          <Button>작성완료</Button>
+        </Exhibit>
+      </Container>
+  );
+};
+
+>>>>>>> origin/kye
 const Div = styled.div`
 display: flex;
 flex-direction: column;
 width: 469px;
+<<<<<<< HEAD
 margin-top: 17px;
 `
+=======
+height: 358px;
+margin-top: 65px;
+`
+
+>>>>>>> origin/kye
 const Name = styled.div`
 display: flex;
 flex-direction: row;
@@ -127,7 +166,10 @@ width: 608px;
 `
 
 const Container = styled.div`
+<<<<<<< HEAD
 background-color: #FFFFFF;
+=======
+>>>>>>> origin/kye
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -156,11 +198,18 @@ const Label = styled.p`
 font-size: 22px;
 font-weight: 500;
 line-height: 18px;
+<<<<<<< HEAD
 margin-top: 17px;
+=======
+text-align: right;
+margin-top: 17px;
+margin-bottom: 90px;
+>>>>>>> origin/kye
 `
 
 const Comment = styled.div`
 display: flex;
+<<<<<<< HEAD
 flex-direction: column;
 justify-content: flex-start;
 width: 469px;
@@ -187,5 +236,12 @@ width: 449px;
 height: 51px;
 font-weight: 500;
 `
+=======
+flex-direction: row;
+justify-content: flex-start;
+`
+
+const Button = styled.button``
+>>>>>>> origin/kye
 
 export default DetailPage;

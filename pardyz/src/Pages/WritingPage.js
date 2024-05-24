@@ -1,7 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { postInfoAPI } from "../API/Axios";
+<<<<<<< HEAD
 import MenuBar from "../Components/MenuBar";
+=======
+>>>>>>> origin/kye
 
 const WritingPage = () => {
   const [formData, setFormData] = useState({
@@ -39,6 +42,7 @@ const WritingPage = () => {
     <>
       <Div>
         <TopDiv>
+<<<<<<< HEAD
           <Title>실패 전시회</Title>
           <SubTitle>카테고리 / 작성하기</SubTitle>
           <MenuBar/>
@@ -46,12 +50,25 @@ const WritingPage = () => {
         <BottomDiv>
           <Left>
             <LeftTitle>여러분의 작품을 자랑해주세요!</LeftTitle>
+=======
+          <h1>실패 전시회</h1>
+          <div>카테고리 / 작성하기</div>
+        </TopDiv>
+        <BottomDiv>
+          <Left>
+            <div>여러분의 작품을 자랑해주세요!</div>
+>>>>>>> origin/kye
             <div>사진업로드</div>
           </Left>
           <Right>
             <FormArea>
+<<<<<<< HEAD
               <BigLabel>작품명</BigLabel>
               <Input
+=======
+              <label>작품명</label>
+              <input
+>>>>>>> origin/kye
                 type="text"
                 name="title"
                 value={formData.title}
@@ -59,8 +76,13 @@ const WritingPage = () => {
               />
             </FormArea>
             <FormArea>
+<<<<<<< HEAD
               <BigLabel>작가명</BigLabel>
               <Input
+=======
+              <label>작가명</label>
+              <input
+>>>>>>> origin/kye
                 type="text"
                 name="painter"
                 value={formData.painter}
@@ -68,13 +90,19 @@ const WritingPage = () => {
               />
             </FormArea>
             <FormArea>
+<<<<<<< HEAD
               <BigLabel>카테고리</BigLabel>
               <CategoryButton>
+=======
+              <label>카테고리</label>
+              <div>
+>>>>>>> origin/kye
                 <Category onClick={() => handleCategoryChange(0)}>여행</Category>
                 <Category onClick={() => handleCategoryChange(1)}>요리</Category>
                 <Category onClick={() => handleCategoryChange(2)}>머리</Category>
                 <Category onClick={() => handleCategoryChange(3)}>패션</Category>
                 <Category onClick={() => handleCategoryChange(4)}>맛집</Category>
+<<<<<<< HEAD
               </CategoryButton>
             </FormArea>
             <FormArea>
@@ -83,36 +111,65 @@ const WritingPage = () => {
                 <OneForm>
                   <Label>1. 실패에 대해 자세하게 설명해주세요. (expLanation)</Label>
                   <Textarea
+=======
+              </div>
+            </FormArea>
+            <FormArea>
+              <div>작품내용</div>
+              <form onSubmit={handleSubmit}>
+                <OneForm>
+                  <label>1. 실패에 대해 자세하게 설명해주세요. (expLanation)</label>
+                  <textarea
+>>>>>>> origin/kye
                     name="expLanation"
                     value={formData.expLanation}
                     onChange={handleChange}
                   />
                 </OneForm>
                 <OneForm>
+<<<<<<< HEAD
                   <Label>2. 실패를 겪으며 배운 점을 작성해주세요 (learned)</Label>
                   <Textarea
+=======
+                  <label>2. 실패를 겪으며 배운 점을 작성해주세요 (learned)</label>
+                  <textarea
+>>>>>>> origin/kye
                     name="learned"
                     value={formData.learned}
                     onChange={handleChange}
                   />
                 </OneForm>
                 <OneForm>
+<<<<<<< HEAD
                   <Label>3. 실패를 겪으며 깨달은 나의 부족한 부분을 작성해주세요. (lacked)</Label>
                   <Textarea
+=======
+                  <label>3. 실패를 겪으며 깨달은 나의 부족한 부분을 작성해주세요. (lacked)</label>
+                  <textarea
+>>>>>>> origin/kye
                     name="lacked"
                     value={formData.lacked}
                     onChange={handleChange}
                   />
                 </OneForm>
                 <OneForm>
+<<<<<<< HEAD
                   <Label>4. 이 실패를 더 겪지 않으려면, 뭘 더 하면 좋을까요? (longedFor)</Label>
                   <Textarea
+=======
+                  <label>4. 이 실패를 더 겪지 않으려면, 뭘 더 하면 좋을까요? (longedFor)</label>
+                  <textarea
+>>>>>>> origin/kye
                     name="longedFor"
                     value={formData.longedFor}
                     onChange={handleChange}
                   />
                 </OneForm>
+<<<<<<< HEAD
                 <WriteDone type="submit">작성 완료</WriteDone>
+=======
+                <button type="submit">작성 완료</button>
+>>>>>>> origin/kye
               </form>
             </FormArea>
           </Right>
@@ -123,38 +180,55 @@ const WritingPage = () => {
 };
 
 const Div = styled.div`
+<<<<<<< HEAD
   width: 1512px;
   flex-direction: column;
   display: flex;
   align-items: center;
   margin-top:60px;
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> origin/kye
 `;
 
 const TopDiv = styled.div`
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
+=======
+>>>>>>> origin/kye
 `;
 
 const BottomDiv = styled.div`
   display: flex;
   flex-direction: row;
+<<<<<<< HEAD
   justify-content: center;
+=======
+>>>>>>> origin/kye
 `;
 
 const Left = styled.div`
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   align-items: center;
   width: 434px;
+=======
+>>>>>>> origin/kye
 `;
 
 const Right = styled.div`
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   width: 428px;
+=======
+>>>>>>> origin/kye
 `;
 
 const FormArea = styled.div`
@@ -165,7 +239,10 @@ const FormArea = styled.div`
 const OneForm = styled.div`
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   margin-bottom: 20px;
+=======
+>>>>>>> origin/kye
 `;
 
 const Category = styled.div`
@@ -174,6 +251,7 @@ const Category = styled.div`
   padding: 10px;
   border: 1px solid #000;
   cursor: pointer;
+<<<<<<< HEAD
   width: 31px;
   height: 20px;
   padding: 9px 23px 9px 22px;
@@ -300,4 +378,8 @@ const CategoryButton = styled.div`
 margin-bottom: 20px;
 `
 
+=======
+`;
+
+>>>>>>> origin/kye
 export default WritingPage;

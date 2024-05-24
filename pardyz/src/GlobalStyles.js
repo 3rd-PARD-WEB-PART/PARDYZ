@@ -40,10 +40,13 @@ form {
     all: unset;
 } */
 
+<<<<<<< HEAD
 textarea{
     all: unset;
 }
 
+=======
+>>>>>>> origin/kye
 :any-link {
     all: unset;
 }

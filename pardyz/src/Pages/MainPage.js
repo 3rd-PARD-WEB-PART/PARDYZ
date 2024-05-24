@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 import BoardItem from "../Components/BoardItem";
+<<<<<<< HEAD
 import { getAllInfoAPI } from "../API/Axios";
 import { useState } from "react";
 
@@ -32,6 +33,20 @@ const MainPage = () => {
 
   
 
+=======
+
+const MainPage = () => {
+  // const tempList = [
+  //   {
+  //     id : 1,
+  //     name : "kim"
+  //   },
+  //   {
+  //     id : 1,
+  //     name : "park"
+  //   }
+  // ];
+>>>>>>> origin/kye
 return (
   <Container>
       <Title>실패 전시회</Title>
@@ -41,6 +56,7 @@ return (
         <Create>작품 올리러 가기</Create> 
       </SecondHeader>
       <Board>
+<<<<<<< HEAD
       
           {tempList.map((item) => {
             return <BoardItem key={item.id} member={item}/>;
@@ -48,6 +64,10 @@ return (
       
       </Board>
 
+=======
+        <BoardItem/>
+      </Board>
+>>>>>>> origin/kye
   </Container>
 );
 };
@@ -133,7 +153,10 @@ const Board = styled.div`
 width: 976px;
 height: 830.79px;
 display : flex;
+<<<<<<< HEAD
 margin-top: 10px;
+=======
+>>>>>>> origin/kye
 `
 
 export default MainPage;

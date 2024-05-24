@@ -34,7 +34,7 @@ const DetailPage = () => {
         </div>
         <Exhibit>
           <Div>
-            <img src="/box.png" alt="프로필 이미지" />
+            <img src="/image.png" alt="프로필 이미지" />
             <Name>
               <Label>{info && info.title}/{info && info.painter}</Label>
             </Name>

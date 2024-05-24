@@ -1,10 +1,27 @@
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
+import { Outlet } from "react-router-dom";
+import { getOneInfoAPI } from "../API/Axios";
+import { useState, useEffect } from "react";
 
 const DetailPage = () => {
+  const [info, setInfo] = useState([]);
+
+  const id = 1;
+
+  useEffect((id) => {
+    const getInfo = async (id) => {
+      const response = await getOneInfoAPI();
+      setInfo(response);
+      console.log(info);
+    };
+    getInfo(id);
+  }, []);
+
   return (
+    <Wrapper>
+      <Outlet />
       <Container>
-        <img src="/curtain.png" alt="커튼"></img>
         <div>
           <Title>실패 전시회</Title>
           <Subtitle>카테고리/요리</Subtitle>
@@ -13,13 +30,11 @@ const DetailPage = () => {
           <Div>
             <img src="/box.png" alt="프로필 이미지" />
             <Name>
-              <Label>작품명/작가명</Label>
+              <Label>{info && info.title}/{info && info.painter}</Label>
             </Name>
           </Div>
           <Desc>
-            <p>
-              본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면 어떨까? 본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면 어떨까?본격적인 칭찬의 장을 마련해서  칭찬하기 쉬운 환경을 조성해 칭찬을 모두 기록하고 정리하면
-            </p>
+            {info && info.lacked}
             {/* <Comment>
               <Label>작품에 대한 감상평을 남겨주세요!</Label>
               <Nickname>
@@ -30,10 +45,31 @@ const DetailPage = () => {
               <Button>작성완료</Button>
             </Comment> */}
           </Desc>
+          <Desc>{info && info.explanation}</Desc>
+          <Desc>{info && info.learned}</Desc>
+          <Desc>{info && info.longedfor}</Desc>
         </Exhibit>
       </Container>
+    </Wrapper>
   );
 };
+
+const Img = styled.div`
+width: 608px;
+border-image-source : url("/border.png");
+`
+
+const Wrapper = styled.div`
+width: 1512px;
+`
+
+const Curtain = styled.img`
+width: 1512px;
+height: 406px;
+border: 1px;
+position: absolute;
+z-index: -1;
+`
 
 const Desc = styled.div`
 display: flex;
@@ -113,6 +149,9 @@ height: 36px;
 padding: 9px;
 `
 
-const Button = styled.button``
+const Button = styled.button`
+background-color: black;
+color: white;
+`
 
 export default DetailPage;

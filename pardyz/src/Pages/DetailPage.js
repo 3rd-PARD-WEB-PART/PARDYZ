@@ -57,9 +57,6 @@ const DetailPage = () => {
           <Desc>
             <Label>✓ 실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
             {info && info.longedfor}
-          </Desc>
-          <Line />
-          {/* <Desc>
             <Comment>
               <Label>작품에 대한 감상평을 남겨주세요!</Label>
               <Nickname>
@@ -69,7 +66,7 @@ const DetailPage = () => {
               <Input type="textarea" placeholder="Add a comment...."></Input>
               <Button>작성완료</Button>
             </Comment>
-          </Desc> */}
+          </Desc>
         </Exhibit>
       </Container>
     </Wrapper>

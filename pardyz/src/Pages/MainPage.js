@@ -4,7 +4,10 @@ import GlobalStyles from "../GlobalStyles";
 import BoardItem from "../Components/BoardItem";
 import { getAllInfoAPI } from "../API/Axios";
 import { useState } from "react";
-import { Header } from "./DetailPage";
+import { Link } from "react-router-dom";
+import MenuBar from "../Components/MenuBar";
+import CreateButton from "../Components/CreateButton";
+
 
 const MainPage = () => {
   const tempList = [
@@ -36,10 +39,15 @@ const MainPage = () => {
 return (
   <Whole>
   <Container>
-      <Header>
-        <img src="/top.png" width="10%" />
-        <img src="/logo.png" width="30%" />
-      </Header>
+      <Svg>
+        <Link to="/detail">  
+          <CreateButton/> 
+        </Link>
+      </Svg>
+      {/* <Tiara/>
+      <Title>실패 전시회</Title>
+      <SubTitle>카테고리/홈</SubTitle>
+      <MenuBar/>
       <SecondHeader>
         <BoardTitle>금주의 실패작</BoardTitle>
         <Link to="/detail">
@@ -52,7 +60,7 @@ return (
             return <BoardItem key={item.id} member={item}/>;
           })}
       
-      </Board>
+      </Board> */}
 
   </Container>
   </Whole>
@@ -92,11 +100,7 @@ const Container = styled.div`
 flex-direction: column;
 display: flex;
 align-items: center;
-margin-top: 0px;
-z-value: -1;
-background-image : url("/bg.png");
-background-repeat : no-repeat;
-background-size : cover;
+margin-top:90px;
 `
 
 const Title = styled.div`

@@ -97,8 +97,8 @@ const WritingPage = () => {
                   />
                 </OneForm>
                 <OneForm>
-                  <label>3. 실패를 겪으며 깨달은 나의 부족한 부분을 작성해주세요. (lacked)</label>
-                  <textarea
+                  <Label>3. 실패를 겪으며 깨달은 나의 부족한 부분을 작성해주세요. (lacked)</Label>
+                  <Textarea
                     name="lacked"
                     value={formData.lacked}
                     onChange={handleChange}

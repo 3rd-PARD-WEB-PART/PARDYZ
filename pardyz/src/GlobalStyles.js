@@ -41,12 +41,18 @@ form {
 } */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 05dd5cc8f9e0119bb327b565c1bcd556610777bc
 textarea{
     all: unset;
 }
 
+<<<<<<< HEAD
 >>>>>>> 35e1a426f6d16084cc095707632b3e8c825e8d02
+=======
+>>>>>>> 05dd5cc8f9e0119bb327b565c1bcd556610777bc
 :any-link {
     all: unset;
 }

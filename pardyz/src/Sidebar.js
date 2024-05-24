@@ -1,7 +1,16 @@
 import styled from "styled-components";
+import {Outlet, NavLink} from "react-router-dom";
 
 const Sidebar = () => {
-  return <Div>def</Div>;
+  return(
+  <>
+    <Div>
+      <div>카테고리</div>
+      <NavLink />
+    </Div>
+    
+  </>
+  );
 };
 
 const Div = styled.div`

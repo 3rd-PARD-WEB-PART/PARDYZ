@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../GlobalStyles";
@@ -13,7 +12,7 @@ import {first, second, third, fourth} from "../Atom";
 
 const MainPage = () => {
 
-  const [first, setFirst] = useRecoilState()
+  const [first, setFirst] = useRecoilState();
   const tempList = [
     {
       id : 1,

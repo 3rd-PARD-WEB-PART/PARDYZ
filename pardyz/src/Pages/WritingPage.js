@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { postInfoAPI } from "../API/Axios";
 import MenuBar from "../Components/MenuBar";
+import { useRef } from "react";
+import CategorySelector from "../Components/CategorySelector";
 
 const WritingPage = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +13,11 @@ const WritingPage = () => {
     expLanation: "",
     learned: "",
     lacked: "",
-    longedFor: ""
+    longedFor: "",
+    imageData: ""
   });
+
+  const fileInput = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,18 +40,33 @@ const WritingPage = () => {
     console.log (response);
   };
 
+  const handleFileInputChange = (e) => {
+    const file = e.target.files[0];
+    const imageURL = URL.createObjectURL(file);
+    setFormData({
+      ...formData,
+      imageData: imageURL,
+    })
+  }
+
+  const onClickFile = () => {
+    fileInput.current.click();
+  }
+
   return (
     <>
       <Div>
         <TopDiv>
-          <Title>실패 전시회</Title>
-          <SubTitle>카테고리 / 작성하기</SubTitle>
-          <MenuBar/>
+          <img src="/top.png" width="10%" />
+          <img src="/logo.png" width="30%" />
+        <MenuBar/>
         </TopDiv>
         <BottomDiv>
           <Left>
             <LeftTitle>여러분의 작품을 자랑해주세요!</LeftTitle>
-            <div>사진업로드</div>
+            <button type="button" onClick={onClickFile}>
+              <input type="file" ref={fileInput} onChange={handleFileInputChange}></input>
+            </button>
           </Left>
           <Right>
             <FormArea>
@@ -69,19 +89,20 @@ const WritingPage = () => {
             </FormArea>
             <FormArea>
               <BigLabel>카테고리</BigLabel>
-              <CategoryButton>
+              {/* <CategoryButton>
                 <Category onClick={() => handleCategoryChange(0)}>여행</Category>
                 <Category onClick={() => handleCategoryChange(1)}>요리</Category>
                 <Category onClick={() => handleCategoryChange(2)}>머리</Category>
                 <Category onClick={() => handleCategoryChange(3)}>패션</Category>
                 <Category onClick={() => handleCategoryChange(4)}>맛집</Category>
-              </CategoryButton>
+              </CategoryButton> */}
+              <CategorySelector />
             </FormArea>
             <FormArea>
               <BigLabel>작품내용</BigLabel>
               <form onSubmit={handleSubmit}>
                 <OneForm>
-                  <Label>1. 실패에 대해 자세하게 설명해주세요. (expLanation)</Label>
+                  <Label>1. 실패에 대해 자세하게 설명해주세요.</Label>
                   <Textarea
                     name="expLanation"
                     value={formData.expLanation}
@@ -89,7 +110,7 @@ const WritingPage = () => {
                   />
                 </OneForm>
                 <OneForm>
-                  <Label>2. 실패를 겪으며 배운 점을 작성해주세요 (learned)</Label>
+                  <Label>2. 실패를 겪으며 배운 점을 작성해주세요.</Label>
                   <Textarea
                     name="learned"
                     value={formData.learned}
@@ -105,7 +126,7 @@ const WritingPage = () => {
                   />
                 </OneForm>
                 <OneForm>
-                  <Label>4. 이 실패를 더 겪지 않으려면, 뭘 더 하면 좋을까요? (longedFor)</Label>
+                  <Label>4. 이 실패를 더 겪지 않으려면, 뭘 더 하면 좋을까요? </Label>
                   <Textarea
                     name="longedFor"
                     value={formData.longedFor}
@@ -127,7 +148,12 @@ const Div = styled.div`
   flex-direction: column;
   display: flex;
   align-items: center;
-  margin-top:60px;
+  margin-top: 0px;
+  top: 0px;
+  z-value: -1;
+  background-image : url("/bg.png");
+  background-repeat : no-repeat;
+  background-size : cover;
 `;
 
 const TopDiv = styled.div`
@@ -170,18 +196,17 @@ const OneForm = styled.div`
 
 const Category = styled.div`
   display: inline-block;
+  text-align: center;
   margin: 5px;
-  padding: 10px;
-  border: 1px solid #000;
+  background-color: #FFFDFA;
   cursor: pointer;
-  width: 31px;
+  width: 40px;
   height: 20px;
   padding: 9px 23px 9px 22px;
   gap: 0px;
   border-radius: 6px;
   opacity: 0px;
-
-
+  box-shadow: 0px 4px 10px 0px #0000001A;
 `;
 
 const LeftTitle = styled.div`
@@ -212,7 +237,7 @@ box-shadow: 4px 4px 10px 0px #0000001A;
 `
 
 const Label = styled.label`
-width: 318px;
+width: auto;
 height: 18px;
 gap: 0px;
 opacity: 0px;
@@ -241,7 +266,7 @@ height: 36px;
 top: 416px;
 left: 844px;
 gap: 0px;
-border-radius: 6px 0px 0px 0px;
+border-radius: 6px;
 opacity: 0px;
 background: #FFFDFA;
 box-shadow: 0px 4px 10px 0px #0000001A;
@@ -279,6 +304,7 @@ line-height: 18px;
 text-align: center;
 color: #929292;
 margin-bottom: 20px;
+margin-top: 60px;
 `
 
 const SubTitle = styled.div`

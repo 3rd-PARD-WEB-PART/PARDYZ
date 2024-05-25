@@ -45,21 +45,27 @@ const DetailPage = () => {
             <Desc>
               <Label>✓ 내가 한 실패는?</Label>
               <div>{first}</div>
+
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 하지만 실패를 통해 이런 것들을 배웠어요!</Label>
+
               <div>{second}</div>
+
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 그래서 이런 점을 깨닫게 되었어요</Label>
+
               <div>{third}</div>
+
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
               <div>{fourth}</div>
+
             </Desc>
             <Line />
           </Down>

@@ -9,25 +9,30 @@ const { persistAtom } = recoilPersist();
 //     effects_UNSTABLE: [persistAtom],
 //   });
 
-export const first = atom({
+
+export const firstState = atom({
+
   key: "firstState",
   defualt: "",
   effects_UNSTABLE: [persistAtom],
 });
 
-export const second = atom({
+export const secondState = atom({
   key: "secondState",
   defualt: "",
   effects_UNSTABLE: [persistAtom],
 });
 
-export const third = atom({
+
+export const thirdState = atom({
   key: "thirdState",
   defualt: "",
   effects_UNSTABLE: [persistAtom],
 });
 
-export const fourth = atom({
+
+export const fourthState = atom({
+
   key: "fourthState",
   defualt: "",
   effects_UNSTABLE: [persistAtom],

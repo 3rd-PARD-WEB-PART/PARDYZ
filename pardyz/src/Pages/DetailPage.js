@@ -3,8 +3,15 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 import { getOneInfoAPI } from "../API/Axios";
 import { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { firstState, secondState, thirdState, fourthState } from "../Atom";
 
 const DetailPage = () => {
+  const [first, setFirst] = useRecoilState(firstState);
+  const [second, setSecond] = useRecoilState(secondState);
+  const [third, setThird] = useRecoilState(firstSthirdStatetate);
+  const [fourth, setFourth] = useRecoilState(fourthState);
+
   const [info, setInfo] = useState([]);
 
   const id = 43;
@@ -37,22 +44,22 @@ const DetailPage = () => {
           <Down>
             <Desc>
               <Label>✓ 내가 한 실패는?</Label>
-              <div>{info && info.lacked}</div>
+              <div>{first}</div>
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 하지만 실패를 통해 이런 것들을 배웠어요!</Label>
-              <div>{info && info.explanation}</div>
+              <div>{second}</div>
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 그래서 이런 점을 깨닫게 되었어요</Label>
-              <div>{info && info.learned}</div>
+              <div>{third}</div>
             </Desc>
             <Line />
             <Desc>
               <Label>✓ 실패를 반복하지 않기 위해, 이렇게 하겠습니다!</Label>
-              <div>{info && info.longedfor}</div>
+              <div>{fourth}</div>
             </Desc>
             <Line />
           </Down>

@@ -39,6 +39,9 @@ const MainPage = () => {
 return (
   <Whole>
   <Container>
+    <Menu>
+      <MenuBar/>
+    </Menu>
       <Svg>
         <Link to="/detail">  
           <CreateButton/> 
@@ -67,11 +70,15 @@ return (
 );
 };
 
+const Menu = styled.div`
+margin-top: 70px;
+`
+
 const Svg = styled.div`
 &:hover{
   cursor: pointer;
 }
-margin-top:200px;
+margin-top: 75px;
 margin-left: 750px;
 display: flex;
 `
@@ -191,8 +198,3 @@ margin-top: 10px;
 `
 
 export default MainPage;
-
-
-
-
-

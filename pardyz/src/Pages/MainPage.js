@@ -7,9 +7,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import MenuBar from "../Components/MenuBar";
 import CreateButton from "../Components/CreateButton";
-
+import { useRecoilState } from "recoil";
+import {first, second, third, fourth} from "../Atom";
 
 const MainPage = () => {
+
+  const [first, setFirst] = useRecoilState();
   const tempList = [
     {
       id : 1,
@@ -193,7 +196,7 @@ align-items: bottom;
 const Board = styled.div`
 width: 976px;
 height: 830.79px;
-display: flex;
+display : flex;
 margin-top: 10px;
 `
 

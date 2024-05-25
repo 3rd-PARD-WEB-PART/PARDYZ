@@ -253,7 +253,7 @@ opacity: 0px;
 padding: 21px 132px 15px 133px;
 border-radius: 6px;
 background: #FFBD3D;
-color: #black;
+color: black;
 display: flex;
 justify-content: center;
 align-items: center;

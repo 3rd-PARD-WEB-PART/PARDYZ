@@ -17,18 +17,28 @@ const CategorySelector = () => {
     setSelectedCategory(index);
   };
 
-  const category = ["여행", "요리", "헤어", "패션", "맛집"];
-
   return (
     <div>
-      {[1, 2, 3, 4, 5].map((index) => (
         <CategoryButton
-          key={index}
-          selected={selectedCategory === index}
-          onClick={() => handleCategorySelect(index)}
-        >
-        </CategoryButton>
-      ))}
+          selected={selectedCategory === 1}
+          onClick={() => handleCategorySelect("여행")}
+        ></CategoryButton>
+        <CategoryButton
+          selected={selectedCategory === 2}
+          onClick={() => handleCategorySelect("요리")}
+        ></CategoryButton>
+        <CategoryButton
+          selected={selectedCategory === 3}
+          onClick={() => handleCategorySelect("헤어")}
+        ></CategoryButton>
+        <CategoryButton
+          selected={selectedCategory === 4}
+          onClick={() => handleCategorySelect("패션")}
+        ></CategoryButton>
+        <CategoryButton
+          selected={selectedCategory === 5}
+          onClick={() => handleCategorySelect("맛집")}
+        ></CategoryButton>
     </div>
   );
 };

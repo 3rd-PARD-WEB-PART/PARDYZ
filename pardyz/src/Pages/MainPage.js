@@ -193,8 +193,11 @@ align-items: bottom;
 const Board = styled.div`
 width: 976px;
 height: 830.79px;
-display : flex;
+display: flex;
 margin-top: 10px;
 `
 
 export default MainPage;
+
+
+
